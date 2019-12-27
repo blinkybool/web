@@ -1,9 +1,18 @@
 title: Billy Price
-remote_theme: chesterhow/tale
+description: Personal Website
+author: Billy Price
+email: billy.price@unimelb.edu.au
+github_username:  billy-price
+# remote_theme: chesterhow/tale
 
-permalink:    /:year-:month-:day/:title
-paginate:     5
+# permalink:    /:year-:month-:day/:title
+# paginate:     5
 
-plugins:
-  - jekyll-paginate
-  - jekyll-remote-theme
+# plugins:
+#   - jekyll-paginate
+#   - jekyll-remote-theme
+
+
+# Build settings
+markdown: kramdown
+theme: minima
