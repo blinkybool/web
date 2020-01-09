@@ -29,3 +29,5 @@ plugins:
   - jekyll-avatar
   - jekyll-feed
   - jekyll-seo-tag
+
+baseurl: /
