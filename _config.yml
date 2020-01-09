@@ -22,21 +22,8 @@ moving:
 githubuser: "billy-price"
 
 # Build settings
-<<<<<<< HEAD
-# theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-avatar
-  - jekyll-feed
-  - jekyll-seo-tag
-
-baseurl: /
-url: /
-=======
 remote_theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
 
 plugins:
   - jekyll-remote-theme
   - jekyll-avatar
->>>>>>> 34ff6a3... changed to moving theme
