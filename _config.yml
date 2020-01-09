@@ -2,6 +2,7 @@ title: Billy Price # The title of the blog
 author: Billy Price # Your name 
 email: billyprice98is@gmail.com # your email shown in the footer
 url: billyprice.me # this is your site's root address.
+baseurl: ""
 description: > # this means to ignore newlines until "show_excerpts:"
   My personal webpage.
 favicon: "./favicon.ico" # set the favicon of the site 
