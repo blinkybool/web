@@ -27,3 +27,4 @@ theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to p
 plugins:
   - jekyll-remote-theme
   - jekyll-avatar
+  - jekyll-seo-tag
