@@ -26,9 +26,21 @@ layout: default
         datetime="{{ page.date | date_to_xmlschema }}"
         itemprop="datePublished"
       >
+        Posted:&nbsp;
         {%- assign date_format = "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+      <time
+        class="dt-published"
+        datetime="{{ page.updated | date_to_xmlschema }}"
+        itemprop="dateUpdated"
+      >
+      {%- if page.updated -%}
+      <br/>Last updated:&nbsp;
+      {%- assign date_format = "%b %-d, %Y" -%}
+      {{ page.updated | date: date_format }}
+      </time>
+      {%- endif -%}
       {%- if page.author -%} •
       <span itemprop="author" itemscope itemtype="http://schema.org/Person"
         ><span class="p-author h-card" itemprop="name">{{
