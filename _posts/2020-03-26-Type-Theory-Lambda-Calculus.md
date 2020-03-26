@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Type Theory and Lambda Calculus
-updated: 2020-02-06
+updated: 2020-03-26
 ---
 
 # Resources

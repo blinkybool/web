@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Topos Theory
-updated: 2020-01-12
+updated: 2020-03-26
 ---
 
 I want to learn Topos Theory as a first venture into categorical/categorial logic. My current understanding of the motivation for topos theory is that its a means of generalising/swapping out the models of a mathematical theory, which is usually occupied by set theory. I'm particularly intrigued about the connection between geometry and logic.
