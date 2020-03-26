@@ -23,8 +23,13 @@ I should warn that these descriptions are written before fully reading the conte
   * Video Lectures Part [*I*](https://www.youtube.com/playlist?list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_), [*II*](https://www.youtube.com/playlist?list=PLbgaMIhjbmElia1eCEZNvsVscFef9m0dm), [*III*](https://www.youtube.com/playlist?list=PLbgaMIhjbmEn64WVX4B08B4h2rOtueWIL)
   * [*Textbook*](https://github.com/hmemcpy/milewski-ctfp-pdf/)
   * General background on Category Theory, which builds towards some applications including monads, topoi and Lawvere Theories (see part [*III*](https://www.youtube.com/playlist?list=PLbgaMIhjbmEn64WVX4B08B4h2rOtueWIL)).
+* Brendan Fong, Bartosz Milewski, and David Spivak - [MIT 18.S097 - Programming with Categories](http://brendanfong.com/programmingcats.html)
+  * [Lecture Notes](http://brendanfong.com/programmingcats_files/cats4progs-DRAFT.pdf)
+  * [Lecture Videos](https://www.youtube.com/playlist?list=PLhgq-BqyZ7i7MTGhUROZy3BOICnVixETS)
+  * [Discussion Forum](https://forum.azimuthproject.org/categories/programming-with-categories-course)
 * MathProofsable - [*Category Theory: Toposes*](https://www.youtube.com/playlist?list=PL4FD0wu2mjWM3ZSxXBj4LRNsNKWZYaT7k)
 * MathProofsable - [*Category Theory: First Order Logic*](https://www.youtube.com/playlist?list=PL4FD0wu2mjWPuKxlMJ-VTHZV5VdzX1twI)
+* Steve Awodey - [Natural Models of Type Theory](https://www.youtube.com/watch?v=U_MGMhDMuPE)
 
 ### Posts/Notes
 
@@ -35,3 +40,9 @@ I should warn that these descriptions are written before fully reading the conte
 * Ieke Moerdijk & Jaap Van Oosten - [*Basic Category Theory and Topos Theory: Lecture Notes*](http://www.staff.science.uu.nl/~ooste110/syllabi/toposmoeder.pdf)
   * From the mastermath course [*Category Theory and Topos Theory*](http://www.staff.science.uu.nl/~ooste110/cattoptheory18.html)
 * Ieke Moerdijk & Jaap Van Oosten - [*Topos Theory: Preliminary Lecture Notes*](http://www.staff.science.uu.nl/~ooste110/syllabi/toposmoeder.pdf)
+* Peter Johnstone - Sketches of An Elephant: A Topos Theory Compendium
+  * [Book Review](https://www.cmu.edu/dietrich/philosophy/docs/tech-reports/159_Awodey.pdf) by Steve Awodey
+
+## Non-introductory topics
+
+* Peter Johnstone - [Topos-theoretic models of the continuum](https://www.youtube.com/watch?v=pKWYa9sc5UI)
