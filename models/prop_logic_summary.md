@@ -1,9 +1,12 @@
 ---
 layout: default
-title: "Propositional Logic Summary"
+title: Propositional Logic Summary
 author: Billy Price
 date: August 22, 2020
 ---
+<head>
+  <title>{{ page.title }}</title>
+</head>
 [← Models](/models)
 
 # Propositional Logic Summary
