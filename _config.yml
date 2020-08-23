@@ -1,6 +1,6 @@
 title: Billy Price # The title of the blog
 author: Billy Price # Your name 
-email: billyprice98is@gmail.com # your email shown in the footer
+email: billy.price@unimelb.edu.au # your email shown in the footer
 url: https://billyprice.me # this is your site's root address.
 baseurl: ""
 description: > # this means to ignore newlines until "show_excerpts:"
