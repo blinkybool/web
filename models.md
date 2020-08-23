@@ -4,4 +4,6 @@ title: "Models of Computation - Summaries"
 permalink: /models/
 ---
 
-* [Propositional Logic Summary](/models/prop_logic_summary.html)
+# Models of Computation - Summaries
+
+* [Propositional Logic Summary](/models/prop_logic_summary)

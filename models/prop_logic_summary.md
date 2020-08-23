@@ -1,15 +1,19 @@
 ---
-layout: page
+layout: default
 title: "Propositional Logic Summary"
 author: Billy Price
 date: August 22, 2020
 ---
+[← Models](/models)
+
 # Propositional Logic Summary
+**Author**: *Billy Price*
+
 Propositions formulas are expressions built just from the following alphabet of symbols, $$A,B,C,...,Z, \textbf{t},\textbf{f}, \neg, \wedge, \vee, \Rightarrow, \Leftrightarrow, \oplus, (, )$$ such that any propositional letter ($$A,B,C,\dots$$ etc), $$\textbf{f}$$, and $$\textbf{t}$$, are all propositional formulas, and if $$P$$ and $$Q$$ are propositional formulas, then the following are all propositional formulas, $$ (\neg P), (P \wedge Q), (P \vee Q), (P \Rightarrow Q), (P \Leftrightarrow Q), (P \oplus Q) $$ where brackets can be dropped wherever unambiguous.
 
 By assigning boolean values ($$0$$ or $$1$$) to each propositional letter, we can "compile" any formula to boolean value. We illustrate this by considering all possible assignments of propositional letters to boolean values, and extending this to large formulas using the following rules.
 
-| $$A$$ | $$B$$ | $$\mathbf{f}$$ | $$\mathbf{t}$$ | $$\neg A$$ | $$A \wedge B$$  | $$A \vee B$$ | $$A \Rightarrow B$$ | $$A \Leftrightarrow B$$ | $$A \vee B$$ |
+| $$A$$ | $$B$$ | $$\mathbf{f}$$ | $$\mathbf{t}$$ | $$\neg A$$ | $$A \wedge B$$  | $$A \vee B$$ | $$A \Rightarrow B$$ | $$A \Leftrightarrow B$$ | $$A \oplus B$$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | 0 | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 | 0 |
 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1 | 0 | 1 |
@@ -29,7 +33,7 @@ Write out the truth tables for $$\varphi$$ and $$\psi$$, and look at the columns
 | 1 | 0 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 
-To show $$\varphi \not\equiv \psi$$, just show one row of the truth table which has different values for $$\varphi$$ and $$\psi$$ - don't do anything else if you can do this!
+To show $$\varphi \not\equiv \psi$$, just show one row of the truth table which has different values for $$\varphi$$ and $$\psi$$ - don't do anything else if you can do this! Can you state a single model which demonstrates $$A \Rightarrow B \not\equiv B \Rightarrow A$$?
 
 ## Logical Consequence
 Logical consequence is a weaker notion than logical equivalence. We say $$\varphi \vDash \psi$$, or "$$\psi$$ is a logical consequence of $$\varphi$$", when every model (row) in which $$\varphi$$ is $$1$$, $$\psi$$ is also $$1$$. Notice that we don't care about models where $$\varphi$$ is $$0$$, but if $$\psi$$ is $$0$$ at any model, $$\varphi$$ must also be $$0$$ there to ensure $$\varphi \vDash \psi$$ (why couldn't it by $$1$$ at $$\varphi$$?). Note that having both $$\varphi \vDash \psi$$ and $$\psi \vDash \varphi$$ tells you that $$\varphi \equiv \psi$$ (think about why). Here is a demonstration of $$A \vDash A \vee B$$, in which the last 2 models are the only ones we need to check to ensure logical consequence (these are where the first formula $$A$$ is true).
@@ -45,16 +49,18 @@ To show $$\varphi \nvDash \psi$$, just show one row of the truth table which ass
 
 ## Validity and Satisfiability
 We introduced 4 statements about formulas, which speak about the models of a formula. Looking at its truth table, we say a formula is
-* **satisfiable** - if there is **at least one row** that makes it true
-* **valid/a tautology** - if **every row** makes it true
-* **non-valid** - if there is **at least one row** that makes it false
-* **unsatisfiable/a contradiction** - if **every row** makes it false
+* **satisfiable** - if there is **at least one model** that makes it true
+* **valid/a tautology** - if **every model** makes it true
+* **non-valid** - if there is **at least one model** that makes it false
+* **unsatisfiable/a contradiction** - if **every model** makes it false
 
-Importantly - these options aren't mutually exclusive, for example, every valid formula is satisfiable, every unsatisfiable formula is non-valid, and every formula which is neither valid, nor unsatisfiable, is both satisfiable and valid! Here's an illustration of these relationships.
+Importantly - these options aren't mutually exclusive, for example, every *valid* formula is *satisfiable*, every *unsatisfiable* formula is *non-valid*, and every formula which is neither *valid*, nor *unsatisfiable*, is both *satisfiable* and *valid*! Here's an illustration of these relationships.
 
 <center>
 <img src="model-venn-diagram.jpeg" alt="drawing" width="66%"/>
 </center>
+
+Despite the region sizes, the vast majority of formulas are in the purple section - both *satisfiable* and *non-valid*.
 
 ## Negated claims
 
@@ -65,7 +71,7 @@ Observe the way these claims change when we assert they are *not* true about a f
 | $$\varphi$$ is not *non-valid* | ...means the thing same as... | $$\varphi$$ is *valid* |
 | $$\varphi$$ is not *unsatisfiable* | ...means the thing same as... | $$\varphi$$ is *satisfiable* |
 
-In contrast, a common mistake is to confuse the statement $$\neg \varphi$$ is *blank* with $$\varphi$$ is not *blank*, where the blanks are replaced with one of the 4 claims about formulas. Without knowing the formula $$\varphi$$, these statements are not the same. For example $$\neg \varphi$$ is *satisfiable* does **not** tell you $$\varphi$$ is *unsatisfiable* (although it is true if $$\varphi$$ is also *valid* - not just *satisfiable*). It just tells you $$\varphi$$ is non-valid, since all we know is there is one model making $$\neg \varphi$$ true. Try to fill out the rest of this table, specifically picturing the truth tables involved, and exactly what evidence each claim gives you (it will look different to the first table).
+In contrast, a common mistake is to confuse the statement "$$\neg \varphi$$ is \_\_\_\_" with "$$\varphi$$ is not \_\_\_\_", where the blanks are replaced with one of the 4 claims about formulas. Without knowing the formula $$\varphi$$, these statements are not the same. For example $$\neg \varphi$$ is *satisfiable* does **not** tell you $$\varphi$$ is *unsatisfiable* (although it is true if $$\varphi$$ is also *valid* - not just *satisfiable*). It just tells you $$\varphi$$ is non-valid, since all we know is there is one model making $$\neg \varphi$$ true. Try to fill out the rest of this table, specifically picturing the truth tables involved, and exactly what evidence each claim gives you (it will look different to the first table).
 
 | $$\neg \varphi$$ is *satisfiable* | ...means the thing same as... | $$\varphi$$ is *non-valid* |
 | $$\neg \varphi$$ is *valid* | ...means the thing same as... | $$\varphi$$ is \_\_\_\_\_\_\_\_\_\_\_\_ |
@@ -85,7 +91,7 @@ In contrast, a common mistake is to confuse the statement $$\neg \varphi$$ is *b
 | 1 | 0 | 1 | 1 | 0 |
 | 1 | 1 | 1 | 1 | 0 |
 
-In particular, the last row, $$A \mapsto 1$$ and $$B \mapsto 1$$, is sufficent evidence to show $$A \Rightarrow A$$ is satisfiable and that $$A \vee B$$ are satisfiable. Similarly, the first row, $$A \mapsto 0$$ and $$B \mapsto 0$$ is sufficent evidence to show $$A \vee B$$ is non-valid, and that $$A \wedge \neg A$$ is non-valid. When proving satisfiability or non-validity, you do not need to present the whole truth table, and it is always best to *explicitly* identify the model which makes the formula true/false.
+In particular, the last row, $$A \mapsto 1$$ and $$B \mapsto 1$$, is sufficent evidence to show $$A \Rightarrow A$$ is satisfiable and that $$A \vee B$$ is satisfiable. Similarly, the first row, $$A \mapsto 0$$ and $$B \mapsto 0$$ is sufficent evidence to show $$A \vee B$$ is non-valid, and that $$A \wedge \neg A$$ is non-valid. When proving satisfiability or non-validity, you do not need to present the whole truth table, and it is always best to *explicitly* identify the model which makes the formula true/false.
 
 On the other hand, validity/tautology and unsatisfiability/contradiction claims require the whole truth table$$\dots$$ or resolution!
 
@@ -137,9 +143,7 @@ I want to show my formula is...
 The first two of these demonstrate a fact about *every* model in a formula's truth table via resolution, and the second two skip resolution and just demonstrate that *at least one* model makes the formula true/false - much easier! Note that the first two are sometimes quicker demonstrated by writing down the truth table - resolution comes in handy when the truth table grows too large.
 
 ### Showing equivalence and logical consequence
-
 Given formulas $$\varphi$$ and $$\psi$$, to show...
-
 * $$\varphi \vDash \psi$$ - construct $$\varphi \wedge \neg \psi$$, convert it to RCNF, then resolve to $$\emptyset$$. Note, this is just showing that $$\varphi \Rightarrow \psi$$ is valid, since $$\neg(\varphi \Rightarrow \psi) \equiv \varphi \wedge \neg \psi$$.
 * $$\varphi \equiv \psi$$ - construct $$\varphi \oplus \psi$$, convert to RCNF, then resolve to $$\emptyset$$.
 
