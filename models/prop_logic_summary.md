@@ -4,7 +4,7 @@ title: "Propositional Logic Summary"
 author: Billy Price
 date: August 22, 2020
 ---
-# Propositional Logic Recap
+# Propositional Logic Summary
 Propositions formulas are expressions built just from the following alphabet of symbols, $$A,B,C,...,Z, \textbf{t},\textbf{f}, \neg, \wedge, \vee, \Rightarrow, \Leftrightarrow, \oplus, (, )$$ such that any propositional letter ($$A,B,C,\dots$$ etc), $$\textbf{f}$$, and $$\textbf{t}$$, are all propositional formulas, and if $$P$$ and $$Q$$ are propositional formulas, then the following are all propositional formulas, $$ (\neg P), (P \wedge Q), (P \vee Q), (P \Rightarrow Q), (P \Leftrightarrow Q), (P \oplus Q) $$ where brackets can be dropped wherever unambiguous.
 
 By assigning boolean values ($$0$$ or $$1$$) to each propositional letter, we can "compile" any formula to boolean value. We illustrate this by considering all possible assignments of propositional letters to boolean values, and extending this to large formulas using the following rules.
