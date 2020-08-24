@@ -29,5 +29,3 @@ plugins:
   - jekyll-remote-theme
   - jekyll-avatar
   - jekyll-katex
-
-katex:
