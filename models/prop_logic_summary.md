@@ -73,7 +73,7 @@ Importantly - these options aren't mutually exclusive, for example, every *valid
 <img src="model-venn-diagram.jpeg" width="66%"/>
 </center>
 
-Despite the region sizes, the vast majority of formulas are in the purple section - both *satisfiable* and *non-valid*.
+Despite the diagram's proportions, the vast majority of formulas tend to be in the purple section - both *satisfiable* and *non-valid*.
 
 ## Negated claims
 
