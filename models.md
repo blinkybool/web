@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Models of Computation - Summaries"
+title: Models of Computation
 permalink: /models/
 ---
 
