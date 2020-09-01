@@ -4,9 +4,10 @@ title: Typing Logical Symbols
 author: Billy Price
 date: August 22, 2020
 ---
-[← Models](/models)
+[← Models of Computation Notes](/models)
 
 # Typing Logical Symbols
+**Author**: *Billy Price*
 
 This is a small glossary of symbol-commands for $\mathrm{\LaTeX}$, specifically the math-environment, which can be used in Microsoft's equation editor in OneNote and Word.
 

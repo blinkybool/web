@@ -4,7 +4,7 @@ title: Propositional Logic Summary
 author: Billy Price
 date: August 22, 2020
 ---
-[← Models](/models)
+[← Models of Computation Notes](/models)
 
 # Propositional Logic Summary
 **Author**: *Billy Price*
@@ -34,6 +34,8 @@ By assigning boolean values ($0$ or $1$) to each propositional letter, we can "c
 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 1 | 1 | 0 |
 
 We call each row of a truth table a *model* - it models a possible world in which each propositional letter is either true, $1$, or false, $0$.
+
+----
 
 ## Equivalence
 While $A \wedge B$ and $B \wedge A$ are *syntactically* (as expressions) different, they are *semantically* (in meaning) the same. We call this equivalence, and use a three-line equal sign to denote this, i.e., $A \wedge B \equiv B \wedge A$. How do we know when two formulas $\varphi$ and $\psi$ are equivalent? We define equivalence to mean the following.
@@ -91,7 +93,7 @@ In contrast, a common mistake is to confuse the statement "$\neg \varphi$ is \_\
 | $\neg \varphi$ is *non-valid* | ...means the thing same as... | $\varphi$ is \_\_\_\_\_\_\_\_\_\_\_\_ |
 | $\neg \varphi$ is *unsatisfiable* | ...means the thing same as... | $\varphi$ is \_\_\_\_\_\_\_\_\_\_\_\_ |
 
-## Examples
+### Examples
 
 * $A \Rightarrow A$ - satisfiable $\checkmark$, valid $\checkmark$, non-valid $\times$, unsatisfiable $\times$
 * $A \vee B$ - satisfiable $\checkmark$, valid $\times$, non-valid $\checkmark$, unsatisfiable $\times$
@@ -107,6 +109,8 @@ In contrast, a common mistake is to confuse the statement "$\neg \varphi$ is \_\
 In particular, the second row, $A \mapsto 0$ and $B \mapsto 1$, is sufficent evidence to show $A \Rightarrow A$ is satisfiable and that $A \vee B$ is satisfiable. Similarly, the first row, $A \mapsto 0$ and $B \mapsto 0$ is sufficent evidence to show $A \vee B$ is non-valid, and that $A \wedge \neg A$ is non-valid. Of course any one row is sufficient evidence that $A \Rightarrow A$ is satisfiable and that $A \wedge \neg A$ is non-valid. When proving satisfiability or non-validity, you do not need to present the whole truth table, and it is always best to *explicitly* identify the model which makes the formula true/false. A bad proof will claim there is a model that makes a formula true/false, without stating a particular model.
 
 On the other hand, validity/tautology and unsatisfiability/contradiction claims require the whole truth table$\dots$ or resolution!
+
+----
 
 ## Resolution
 
