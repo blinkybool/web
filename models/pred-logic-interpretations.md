@@ -32,8 +32,8 @@ On the other hand, establishing that one interpretation agrees or disagrees with
 ## How do I write down a particular interpretation?
 A interpretation in predicate logic has various pieces of data, which you can just state in sequence, and omit anything unecessary (for example, if your formulas have no function symbols). There is no strict way you should be packaging all of this data, just make it neat, clear, and most importantly *complete*.
 
-1. Write down a domain. For example $D = \{a,b,c\}$, or $D = \mathbb{Z}$.
-2. If there are any constants in your formula, either include them as part of the domain with the same name, or explicitly define the association. For example, you could declare a domain $D = \{a,tom,c\}$ and do nothing more, or declare a domain $D = \{a,b,c\}$ and separately write down **constants**: $tom \mapsto b$.
+1. Write down a domain. For example $$D = \{a,b,c\}$$, or $D = \mathbb{Z}$.
+2. If there are any constants in your formula, either include them as part of the domain with the same name, or explicitly define the association. For example, you could declare a domain $$D = \{a,tom,c\}$$ and do nothing more, or declare a domain $$D = \{a,b,c\}$$ and separately write down **constants**: $tom \mapsto b$.
 3. Describe the function interpretations for the function symbols and the predicates
 
 The best way to do Step 3 depends on the size of the $D$.
