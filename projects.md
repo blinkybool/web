@@ -9,7 +9,7 @@ permalink: /projects/
 ## Research
 
 * *Formalising an Intuitionistic Type Theory in Lean.*
-  * Supervised by [Daniel Murfet](therisingsea.org) and [Toby Murray](https://people.eng.unimelb.edu.au/tobym/). 
+  * Supervised by [Daniel Murfet](http://therisingsea.org) and [Toby Murray](https://people.eng.unimelb.edu.au/tobym/). 
   * [`github`](https://github.com/billy-price/TL)
   * [paper](https://nbviewer.jupyter.org/github/billy-price/TL/blob/master/docs/report/TypeTheoryInLean.pdf)
 * *Visualisation of R-Cuts in Embedded Planar Graphs.*

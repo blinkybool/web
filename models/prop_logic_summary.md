@@ -69,7 +69,7 @@ We introduced 4 statements about formulas, which speak about the models of a for
 * **non-valid** - if there is **at least one model** that makes it false
 * **unsatisfiable/a contradiction** - if **every model** makes it false
 
-Importantly - these options aren't mutually exclusive, for example, every *valid* formula is *satisfiable*, every *unsatisfiable* formula is *non-valid*, and every formula which is neither *valid*, nor *unsatisfiable*, is both *satisfiable* and *valid*! Here's an illustration of these relationships.
+Importantly - these options aren't mutually exclusive, for example, every *valid* formula is *satisfiable*, every *unsatisfiable* formula is *non-valid*, and every formula which is neither *valid*, nor *unsatisfiable*, is both *satisfiable* and *non-valid*! Here's an illustration of these relationships.
 
 <center>
 <img src="model-venn-diagram.jpeg" width="66%"/>
