@@ -12,3 +12,4 @@ Here I'll post various summaries and explanations of often misunderstood topics 
 * [Typing Logical Symbols](/models/typing_logical_symbols)
 * [Interpretations for Predicate Logic](/models/pred-logic-interpretations)
 * [Translating Sentences to Predicate Logic](/models/pred-logic-translation)
+* [What *is* a Set?](/models/what-is-a-set)
