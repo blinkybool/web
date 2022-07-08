@@ -1,8 +1,8 @@
 title: Billy Price # The title of the blog
 author: Billy Price # Your name 
 email: billy.price@unimelb.edu.au # your email shown in the footer
-url: https://billyprice.me # this is your site's root address.
-baseurl: ""
+url: https://billy-price.github.io # this is your site's root address.
+baseurl: "/web"
 description: > # this means to ignore newlines until "show_excerpts:"
   My personal webpage.
 favicon: "./favicon.ico" # set the favicon of the site 
