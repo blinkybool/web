@@ -1,13 +1,13 @@
 # Belongs at: /_data/navigation.yml
 
 - title: Home
-  url: /
+  url: /web
 
 - title: Research
-  url: /research
+  url: /web/research
 
 - title: Links
-  url: /links
+  url: /web/links
 
 - title: Models
-  url: /models
+  url: /web/models
