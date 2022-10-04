@@ -3,7 +3,7 @@ layout: home
 ---
 
 Hi there, I'm Billy.
-I like mathematics, logic and theoretical computer science, and enjoy mixing them together. Check the tab at the top right for my research.
+I like mathematics, logic and theoretical computer science, and enjoy mixing them together.
 
 ## Foundations
 
