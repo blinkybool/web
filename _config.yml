@@ -1,7 +1,7 @@
-title: Billy Price # The title of the blog
-author: Billy Price # Your name 
-email: billy.price@unimelb.edu.au # your email shown in the footer
-url: https://billy-price.github.io # this is your site's root address.
+title: Billy Snikkers # The title of the blog
+author: Billy Snikkers # Your name 
+email: billyprice98is@gmail.com # your email shown in the footer
+url: https://blinkybool.github.io # this is your site's root address.
 baseurl: "/web"
 description: > # this means to ignore newlines until "show_excerpts:"
   My personal webpage.
@@ -17,10 +17,10 @@ moving:
   date_format: "%b %d" # date format of posts in home page
   back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
   social_links:
-    github:  billy-price
+    github:  blinkybool
     twitter: Billy__Price
 
-githubuser: "billy-price"
+githubuser: "blinkybool"
 
 # Build settings
 remote_theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
