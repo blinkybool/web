@@ -53,7 +53,7 @@ To lookup any symbol not listed here, use [Detexify](https://detexify.kirelabs.o
 * $\cap$ - `\cap`
 * $\subseteq$ - `\subseteq`
 * $\setminus$ - `\setminus`
-* $\{ \}$ - `\{ \}`
+* $\\{ \\}$ - `\{ \}`
 
 The backslash is necessary in front of each curly-brace, since by themselves they are used to group latex expressions.
 

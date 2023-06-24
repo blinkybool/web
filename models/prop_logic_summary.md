@@ -135,17 +135,17 @@ $ \{\{P, \neg Q, S\}, \{P, \neg R, S\}, \{\neg S, \neg P\}, \{\neg S, Q, R\}\}$
 </center>
 
 ### Resolving Clauses
-If we can find a propositional letter $A$ and two clauses, $X, Y$ with $P \in X$ and $\neg P \in Y$ (like $\{P,A,B\}$ and $\{\neg P, C, D, E\}$) we can conclude the clause $(X \cup Y) \setminus \{P,\neg P\}$, that is, all the literals in either X or Y that aren't $P$ or $\neg P$, as a **logical consequence**. For example, the clauses $\{P,A,B\}$ and $\{\neg P, C, D, E\}$ *resolve* to $\{A,B,C,D,E\}$. Paying attention to the precise definition of logical consequence, pick two small clauses that can be resolved, and convince yourself that the resolvent is a logical consequence of those two clauses together. Importantly, the resolvent is *not* equivalent to the previous two, it's just a logical consequence.
+If we can find a propositional letter $A$ and two clauses, $X, Y$ with $P \in X$ and $\neg P \in Y$ (like $\\{P,A,B\\}$ and $\\{\neg P, C, D, E\\}$) we can conclude the clause $(X \cup Y) \setminus \{P,\neg P\}$, that is, all the literals in either X or Y that aren't $P$ or $\neg P$, as a **logical consequence**. For example, the clauses $\\{P,A,B\\}$ and $\\{\neg P, C, D, E\\}$ *resolve* to $\\{A,B,C,D,E\\}$. Paying attention to the precise definition of logical consequence, pick two small clauses that can be resolved, and convince yourself that the resolvent is a logical consequence of those two clauses together. Importantly, the resolvent is *not* equivalent to the previous two, it's just a logical consequence.
 
 ![resolvent](resolvent.jpeg)
 
-In the above image, we make use of the principle written in red, which says that if we can ever derive a contradiction (an unsatisfiable clause), we can conclude the unsatisfiability of the original clauses. We consider the empty clause, written $\emptyset$, unsatisfiable, because the only way to derive it is to *resolve* a pair of clauses of the form $\{P\}$ and $\{\neg P\}$, which together represent $P \wedge \neg P$ (clearly unsatisfiable).
+In the above image, we make use of the principle written in red, which says that if we can ever derive a contradiction (an unsatisfiable clause), we can conclude the unsatisfiability of the original clauses. We consider the empty clause, written $\emptyset$, unsatisfiable, because the only way to derive it is to *resolve* a pair of clauses of the form $\\{P\\}$ and $\\{\neg P\\}$, which together represent $P \wedge \neg P$ (clearly unsatisfiable).
 
 ### A common misconception
 
-What do the clauses $\{A,B\}$ and $\{\neg A, \neg B\}$ resolve to? Is it $\emptyset$? No! That would mean that $(A \vee B) \wedge (\neg A \vee \neg B)$ is unsatisfiable, but it isn't! Consider the model where $A$ is true and $B$ is false - this makes the formula true.
+What do the clauses $\\{A,B\\}$ and $\\{\neg A, \neg B\\}$ resolve to? Is it $\emptyset$? No! That would mean that $(A \vee B) \wedge (\neg A \vee \neg B)$ is unsatisfiable, but it isn't! Consider the model where $A$ is true and $B$ is false - this makes the formula true.
 
-These clauses actually resolve to either $\{B,\neg B\}$ or to $\{A,\neg A\}$, since we can only resolve on one letter at a time. Both true of these formulas are always in any model - so are equivalent to $\textbf{t}$ (true). But having "true" as a logical consequence tells you nothing! All formulas have "true" as a logical consequence. Given only these clauses, we are at a dead end - there is no contradiction among them.
+These clauses actually resolve to either $\\{B,\neg B\\}$ or to $\\{A,\neg A\\}$, since we can only resolve on one letter at a time. Both true of these formulas are always in any model - so are equivalent to $\textbf{t}$ (true). But having "true" as a logical consequence tells you nothing! All formulas have "true" as a logical consequence. Given only these clauses, we are at a dead end - there is no contradiction among them.
 
 ## Usage of Resolution
 
