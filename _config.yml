@@ -1,6 +1,5 @@
 title: Billy Snikkers # The title of the blog
 author: Billy Snikkers # Your name 
-email: billyprice98is@gmail.com # your email shown in the footer
 url: https://blinkybool.github.io # this is your site's root address.
 baseurl: "/web"
 description: > # this means to ignore newlines until "show_excerpts:"
@@ -18,7 +17,7 @@ moving:
   back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
   social_links:
     github:  blinkybool
-    twitter: Billy__Price
+    twitter: billysnikkers
 
 githubuser: "blinkybool"
 

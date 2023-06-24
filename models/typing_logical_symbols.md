@@ -1,13 +1,14 @@
 ---
 layout: page
 title: Typing Logical Symbols
-author: Billy Price
 date: August 22, 2020
 ---
-[← Models of Computation Notes](/models)
+[← Models of Computation Notes](../models.md)
 
 # Typing Logical Symbols
 **Author**: *Billy Price*
+
+{% katexmm %}
 
 This is a small glossary of symbol-commands for $\mathrm{\LaTeX}$, specifically the math-environment, which can be used in Microsoft's equation editor in OneNote and Word.
 
@@ -51,7 +52,7 @@ To lookup any symbol not listed here, use [Detexify](https://detexify.kirelabs.o
 * $\cap$ - `\cap`
 * $\subseteq$ - `\subseteq`
 * $\setminus$ - `\setminus`
-* $$ \{ \} $$ - `\{ \}`
+* $\{ \}$ - `\{ \}`
 
 The backslash is necessary in front of each curly-brace, since by themselves they are used to group latex expressions.
 
@@ -60,3 +61,5 @@ The backslash is necessary in front of each curly-brace, since by themselves the
 * $\forall x \exists y L(x,y)$ - `\forall x \exists y L(x,y)`
 * $$(X \cup Y) \setminus \{P, \neg P\}$$ - `(X \cup Y) \setminus \{P, \neg P\}`
 * $\varphi_1, \varphi_2, \varphi_3 \vDash \psi$ - `\varphi_1, \varphi_2, \varphi_3 \vDash \psi`
+
+{% endkatexmm %}

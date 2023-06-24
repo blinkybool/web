@@ -1,13 +1,14 @@
 ---
 layout: page
 title: What is a Set?
-author: Billy Price
 date: August 22, 2020
 ---
-[← Models of Computation Notes](/models)
+[← Models of Computation Notes](../models.md)
 
 # What *is* a Set?
 **Author**: Billy Price
+
+{% katexmm %}
 
 What is a set? A computer scientist might tell you its a kind of collection data-type, perhaps a list, with two special features:
 * The order of elements doesn't matter.
@@ -33,7 +34,7 @@ $$y \in \{ x \mid P(x)\}$$
 
 we're actually just saying $P(y)$.
 
-Given an anonymous set, $A$, you might imagine $A$ to secretly have the form $\\{x \mid P(x)\\}$ for some predicate $P(x)$. Of course $P(x)$ must always agree with $x \in A$, so we can bring this full circle by saying:
+Given an anonymous set, $A$, you might imagine $A$ to secretly have the form $\{x \mid P(x)\}$ for some predicate $P(x)$. Of course $P(x)$ must always agree with $x \in A$, so we can bring this full circle by saying:
 
 $$A = \{x \mid x \in A\}$$
 
@@ -41,11 +42,11 @@ $$A = \{x \mid x \in A\}$$
 
 This view on sets as predicates motivates what it means for two sets to be equal - it just means that their associated one-place-predicates (unary predicates) are the same. So given two predicates $P(x)$ and $Q(x)$, what do we mean when we say they are the same? How about, they have the same truth value for every possible $x$? We can package this as the assertion:
 
-$$``\forall x~(P(x) \Leftrightarrow Q(x))$$
+$$\forall x~(P(x) \Leftrightarrow Q(x))$$
 
 which may or may not be true at some interpretation, $\mathcal{I}$.
 
-By extension, given sets $A$ and $B$, we define $A = B$ to mean $$\forall x~ (x \in A \Leftrightarrow x \in B)$$ You can see that this reduces to the original statement when $A$ is $\\{ x \mid P(x)\\}$ and $B$ is $\\{y \mid Q(y)\\}$.
+By extension, given sets $A$ and $B$, we define $A = B$ to mean $$\forall x~ (x \in A \Leftrightarrow x \in B)$$ You can see that this reduces to the original statement when $A$ is $\{ x \mid P(x)\}$ and $B$ is $\{y \mid Q(y)\}$.
 
 Now what would it mean if we weakened the use of biimplication, $\Leftrightarrow$, to implication, $\Rightarrow$?
 
@@ -53,7 +54,7 @@ $$\forall x~(x \in A \Rightarrow x \in B)$$
 
 This is precisely what we mean when we say $A \subseteq B$. Notice that we can combine $A \subseteq B$ and $B \subseteq A$ to conclude $A = B$, since
 
-$$ \begin{align} A \subseteq B \wedge B \subseteq A &\equiv \forall x~(x \in A \Rightarrow x \in B) \wedge \forall y~(y \in B \Rightarrow y \in A) \\ &\equiv \forall x~[(x \in A \Rightarrow x \in B) \wedge (x \in B \Rightarrow x \in A)] \\ &\equiv \forall x~(x \in A \Leftrightarrow x \in B) \\ &\equiv A = B \end{align}$$
+$$ \begin{aligned} A \subseteq B \wedge B \subseteq A &\equiv \forall x~(x \in A \Rightarrow x \in B) \wedge \forall y~(y \in B \Rightarrow y \in A) \\ &\equiv \forall x~[(x \in A \Rightarrow x \in B) \wedge (x \in B \Rightarrow x \in A)] \\ &\equiv \forall x~(x \in A \Leftrightarrow x \in B) \\ &\equiv A = B \end{aligned}$$
 
 Notice that $A \subseteq B$ doesn't rule out the possibility that $A = B$, and to express "proper subset", $A \subset B$, we must say something like $(A \subseteq B) \wedge \exists x~( x \in A \wedge x \not\in B)$ or $A \subseteq B \wedge A \neq B$. Don't be misled by the pronounciation "subset or equal to" for $\subseteq$ sounding like a compound statement involving $\subset$ "subset", as a component - it's really the other way around.
 
@@ -68,17 +69,17 @@ $$\emptyset := \{x \mid \mathbf{f}\}$$
 
 ### Singleton sets
 
-Given an object $a$, we can define the set just containing $a$, written $\\{a\\}$, like this:
+Given an object $a$, we can define the set just containing $a$, written $\{a\}$, like this:
 
 $$\{x \mid x = a\}$$
 
 ### Finite sets
 
-Given some objects, say $a,b,c,d$, we can describe a set which contains those elements, and nothing else. $\\{a,b,c,d\\}$ But is this the same as $\\{a,a,d,c,b\\}$? How would we demonstrate this? The problem is we haven't defined what $\\{a,b,c,d\\}$ *is* - what is the underlying predicate? Here's a simple way to define it:
+Given some objects, say $a,b,c,d$, we can describe a set which contains those elements, and nothing else. $\{a,b,c,d\}$ But is this the same as $\{a,a,d,c,b\}$? How would we demonstrate this? The problem is we haven't defined what $\{a,b,c,d\}$ *is* - what is the underlying predicate? Here's a simple way to define it:
   
   $$\{a,b,c,d\} := \{x \mid x = a \vee x = b \vee x = c \vee x = d\}$$
 
-Now it's clear that we could demonstrate $\\{a,b,c,d\\} = \\{a,a,d,c,b\\}$, since this is just proving that
+Now it's clear that we could demonstrate $\{a,b,c,d\} = \{a,a,d,c,b\}$, since this is just proving that
 
 $$(x = a \vee x = b \vee x = c \vee x = d) \equiv (x = a \vee x = a \vee x = d \vee x = c \vee x = b)$$
 
@@ -111,7 +112,7 @@ Just like disjunction of logical formulas creates a formula where (usually) *mor
 
 ## The important difference between sets and unary predicates
 
-Hopefully by now you are convinced that a set "is just a predicate". However I want to make a careful distinction now. A set is a set, and only becomes a logical statement via the $\in$ symbol. Likewise, a unary predicate, or any logical statement $\varphi(x)$, is not a set, and only becomes a set once we *lift* it to a set by writing $\\{x \mid \varphi(x)\\}$.
+Hopefully by now you are convinced that a set "is just a predicate". However I want to make a careful distinction now. A set is a set, and only becomes a logical statement via the $\in$ symbol. Likewise, a unary predicate, or any logical statement $\varphi(x)$, is not a set, and only becomes a set once we *lift* it to a set by writing $\{x \mid \varphi(x)\}$.
 
 Essentially, a set is a *wrapper* for a predicate, and that predicate is accessed via the $\in$ symbol.
 
@@ -127,14 +128,14 @@ $$(A \cap B) = \color{red}{(x \in B \wedge x \in A)}$$
 
 since the thing on the right side of the equals sign should be a set, not a logical assertion. We can fix both sentences as follows.
 
-$$\begin{align}(x \in A \cap B) &\Leftrightarrow (x \in B \wedge x \in A) \\
-(A \cap B) &= \{x \mid x \in B \wedge x \in A\} \end{align}$$
+$$\begin{aligned}(x \in A \cap B) &\Leftrightarrow (x \in B \wedge x \in A) \\
+(A \cap B) &= \{x \mid x \in B \wedge x \in A\} \end{aligned}$$
 
-For similar reasons, the reading of $x \in A \cap B$ should be unambiguously $x \in (A \cap B)$, and not $(x \in A) \cap B$, because we can only intersect *sets*, not logical statements like $x \in A$. Of course we can *lift* any logical statement to a set, but that would be written $\\{x \mid x \in A\\} \cap B$, which is just $A \cap B$, and likely not what we mean when we write $x \in A \cap B$.
+For similar reasons, the reading of $x \in A \cap B$ should be unambiguously $x \in (A \cap B)$, and not $(x \in A) \cap B$, because we can only intersect *sets*, not logical statements like $x \in A$. Of course we can *lift* any logical statement to a set, but that would be written $\{x \mid x \in A\} \cap B$, which is just $A \cap B$, and likely not what we mean when we write $x \in A \cap B$.
 
 ----
 
-In the following table, notice how $\subseteq$ and $=$ turn two sets in a logical statement, while $\cup, \cap, \setminus, \oplus, \times$ turn two sets into a new set. Also notice that anything written in the **Set Construction** column can be written as $\\{x \mid \varphi\\}$, where $\varphi$ is the corresponding formula in the **Equivalent Statement** column with $x$ free. The last row (set product) is an exception - we would write $\\{(x,y) \mid x \in A \wedge y \in B \\}$.
+In the following table, notice how $\subseteq$ and $=$ turn two sets in a logical statement, while $\cup, \cap, \setminus, \oplus, \times$ turn two sets into a new set. Also notice that anything written in the **Set Construction** column can be written as $\{x \mid \varphi\}$, where $\varphi$ is the corresponding formula in the **Equivalent Statement** column with $x$ free. The last row (set product) is an exception - we would write $\{(x,y) \mid x \in A \wedge y \in B \}$.
 
 |Set Construction|Logical Statement|Equivalent statement|
 |---|---|---|
@@ -145,3 +146,5 @@ In the following table, notice how $\subseteq$ and $=$ turn two sets in a logica
 |$A \setminus B$ | $x \in A \setminus B$| $x \in A \wedge x \not\in B$ |
 |$A \oplus B$ | $x \in A \oplus B$| $x \in A \oplus x \in B$ |
 |$A \times B$ | $(x,y) \in A \times B$| $x \in A \wedge y \in B$ |
+
+{% endkatexmm %}

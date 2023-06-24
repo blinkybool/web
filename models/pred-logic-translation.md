@@ -1,12 +1,13 @@
 ---
 layout: page
 title: Translating Sentences to Predicate Logic
-author: Billy Price
 date: August 31, 2020
 ---
 
 # Translating Sentences to Predicate Logic
 **Author**: *Billy Price*
+
+{% katexmm %}
 
 $$\text{"Crows are black"}$$
 
@@ -48,3 +49,5 @@ What we actually need is the conjunction statement, $\exists x~(C(x) \wedge B(x)
 ## Conclusion
 
 When translating sentences to predicate logic, more often than not, **universal quantification, $\forall$, is paired with an implication, $\Rightarrow$**, and **existential quantification, $\exists$, is paired with a conjunction, $\wedge$**. Beware the strength of the statement $\forall x~ (P(x) \wedge Q(x))$ (it might be *less often* true than you intend) and the weakness of the statement $\exists x~ (P(x) \Rightarrow Q(x))$ (it might be *more often* true than you intend).
+
+{% endkatexmm %}

@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Interpretations for Predicate Logic
-author: Billy Price
 date: August 31, 2020
 ---
-[← Models of Computation Notes](/models)
+[← Models of Computation Notes](../models.md)
 
 # Interpretations for Predicate Logic
 **Author**: *Billy Price*
 
+{% katexmm %}
 ### Models vs Interpretations Terminology
 In the field of logic, the term **model** has two strengths of meaning. In the weaker one, to say "$M$ is a **model**" is just to say that $M$ is just a configuration of the world - in which some formula might evaluate to true or to false. However, in the context of a particular formula, $\varphi$, the statement "$M$ is a **model** for $\varphi$" or "$M$ **models** $\varphi$", often takes on the stronger meaning, which is, $M$ is a configuration of the world, and in that world, $\varphi$ is true. To make the negative statement, we might say "$M$ is a **countermodel** of $\varphi$", meaning $M$ is a configuration of the world in which $\varphi$ is false.
 
@@ -41,7 +41,7 @@ The best way to do Step 3 depends on the size of the $D$.
 * Infinite Domains - write down some rule. So if $D = \mathbb{Z}$, you could choose $f(x) = x + 1$ for a function symbol, or $P(x) = (x \text{ mod } 3 \equiv 0) $. For more complicated predicates, just describe exactly when they are true or false of their inputs with sufficient detail.
 * Finite Domains - there are a couple options
   * List **all** the assignments - e.g. $f(a) = b, f(b) = a, f(c) = c$, $P(a) = \mathbf{t}, P(b) = \mathbf{f}, P(c) = \mathbf{t}$.
-  * For binary functions or predicates, write down a table, where the rows determine the first input and the columns determine the second input. The below example specifies $f$ and $Q$ such that $f(a,b)=a,~ f(b,a)=c, \dots, ~ Q(c,b)=1,~ Q(b,c)=0, \dots$ ![](/models/binary-function-table.jpeg)
+  * For binary functions or predicates, write down a table, where the rows determine the first input and the columns determine the second input. The below example specifies $f$ and $Q$ such that $f(a,b)=a,~ f(b,a)=c, \dots, ~ Q(c,b)=1,~ Q(b,c)=0, \dots$ ![](binary-function-table.jpeg)
 
 Notice that in listing or tabling the assignments of objects to other objects (or truth values), there may or may not be some concise *rule* like $f(x)=x+1$ or "$P(x)$ is true iff. $x$ is even" (especially if the domain is abstract, like $D=\{a,b,c\}$). This is fine, because here, what a function **is**, is the **assignments**, not a rule. We are of no obligation to make sense of the assignments - they just are. In fact, there are many many functions for which there is **no finitely specifiable rule** that produces the outputs from the inputs.
 
@@ -53,3 +53,5 @@ When crafting a interpretation that agrees or disagrees with some formula, here 
 * Just because you have an $n$-place predicate or function symbol, doesn't mean you need $n$-many objects. For example, $D = \{a\}, P(a,a,a) = \mathbf{t}$ describes a interpretation which models $\forall x~(\exists y~(\forall z~(P(x,y,z) \Rightarrow P(x,z,y))))$.
 * If none of your small domains work, give up and try $D = \mathbb{N}$ or $D = \mathbb{Z}$ (the natural numbers and the integers), and some creative intepretation for the predicates and function symbols.
 * Make sure your function definitions are *complete*. Is there any possible inputs to your functions or predicates for which you haven't specified an output/truth value? Even if these values don't change whether your formula is true or false in the interpretation, it is best to present a fully realised interpretation to avoid error, and to remove any doubt that your interpretation is a model.
+
+{% endkatexmm %}

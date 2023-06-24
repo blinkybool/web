@@ -9,14 +9,18 @@ layout: default
   <div class="home-title">
     {% avatar user=site.githubuser size=125 class="about-avatar"%}
     <p class="home-heading">{{ site.title }}</p>
-    <p class="home-sub-heading">{{- site.description | escape -}}</p>
+    <p class="black-link">
+      {%- include social.html -%}
+      <!-- <a class="u-email black-link" href="mailto:{{ site.email }}">{{ site.email }}</a> -->
+    </p>
+    <!-- <p class="home-sub-heading">{{- site.description | escape -}}</p> -->
   </div>
 
   <div>
     {{content}}
   </div>
 
-  {%- if site.posts.size > 0 -%}
+  <!-- {%- if site.posts.size > 0 -%}
   <ul class="post-list">
       {% for post in site.posts  %}
       {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -48,5 +52,5 @@ layout: default
       {% endif %}
   {% endfor %}
   </ul>
-  {%- endif -%}
+  {%- endif -%} -->
 </div>
