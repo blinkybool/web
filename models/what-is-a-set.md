@@ -2,13 +2,13 @@
 layout: page
 title: What is a Set?
 date: August 22, 2020
+katex: True
 ---
 [← Models of Computation Notes](../models.md)
 
 # What *is* a Set?
 **Author**: Billy Price
 
-{% katexmm %}
 
 What is a set? A computer scientist might tell you its a kind of collection data-type, perhaps a list, with two special features:
 * The order of elements doesn't matter.
@@ -147,4 +147,3 @@ In the following table, notice how $\subseteq$ and $=$ turn two sets in a logica
 |$A \oplus B$ | $x \in A \oplus B$| $x \in A \oplus x \in B$ |
 |$A \times B$ | $(x,y) \in A \times B$| $x \in A \wedge y \in B$ |
 
-{% endkatexmm %}

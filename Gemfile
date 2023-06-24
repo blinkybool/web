@@ -7,7 +7,6 @@ group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-remote-theme"
   gem 'jekyll-avatar'
-  gem 'jekyll-katex'
   gem 'jekyll-commonmark-ghpages'
 end
 

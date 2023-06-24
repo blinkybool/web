@@ -2,13 +2,14 @@
 layout: page
 title: Interpretations for Predicate Logic
 date: August 31, 2020
+katex: True
 ---
 [← Models of Computation Notes](../models.md)
 
 # Interpretations for Predicate Logic
 **Author**: *Billy Price*
 
-{% katexmm %}
+
 ### Models vs Interpretations Terminology
 In the field of logic, the term **model** has two strengths of meaning. In the weaker one, to say "$M$ is a **model**" is just to say that $M$ is just a configuration of the world - in which some formula might evaluate to true or to false. However, in the context of a particular formula, $\varphi$, the statement "$M$ is a **model** for $\varphi$" or "$M$ **models** $\varphi$", often takes on the stronger meaning, which is, $M$ is a configuration of the world, and in that world, $\varphi$ is true. To make the negative statement, we might say "$M$ is a **countermodel** of $\varphi$", meaning $M$ is a configuration of the world in which $\varphi$ is false.
 
@@ -54,4 +55,3 @@ When crafting a interpretation that agrees or disagrees with some formula, here 
 * If none of your small domains work, give up and try $D = \mathbb{N}$ or $D = \mathbb{Z}$ (the natural numbers and the integers), and some creative intepretation for the predicates and function symbols.
 * Make sure your function definitions are *complete*. Is there any possible inputs to your functions or predicates for which you haven't specified an output/truth value? Even if these values don't change whether your formula is true or false in the interpretation, it is best to present a fully realised interpretation to avoid error, and to remove any doubt that your interpretation is a model.
 
-{% endkatexmm %}

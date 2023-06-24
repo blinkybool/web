@@ -2,6 +2,7 @@
 layout: page
 title: Propositional Logic Summary
 date: August 22, 2020
+katex: True
 ---
 [← Models of Computation Notes](../models.md)
 
@@ -13,7 +14,7 @@ date: August 22, 2020
 >[![abc](https://thejenkinscomic.files.wordpress.com/2020/08/screenshot-1377.png?w=1024){:height="66%" width="66%"}](https://thejenkinscomic.wordpress.com/2020/08/22/always-open/)
 >{: refdef}
 
-{% katexmm %}
+
 
 Propositions formulas are expressions built just from the following alphabet of symbols,
 
@@ -167,4 +168,3 @@ Given formulas $\varphi$ and $\psi$, to show...
 
 More generally, we can demonstrate that a conclusion $\psi$ follows from the assumption of premises $\varphi_1, \varphi_2, \dots \varphi_n$, we consider the formula $\varphi_1 \wedge \varphi_2 \wedge \dots \varphi_n \wedge \neg \psi$, convert it to RCNF, and resolve to $\emptyset$. Again, this is just demonstrating that $(\varphi_1 \wedge \varphi_2 \wedge \dots \wedge \varphi_n) \Rightarrow \psi$ is valid (a tautology). Note that each premise, $\varphi_i$, can be separately converted to clausal form and combined with the rest, since they are all part of a larger conjunction (remember to negate the conclusion, $\psi$, before converting to RCNF).
 
-{% endkatexmm %}

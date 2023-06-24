@@ -2,13 +2,14 @@
 layout: page
 title: Typing Logical Symbols
 date: August 22, 2020
+katex: True
 ---
 [← Models of Computation Notes](../models.md)
 
 # Typing Logical Symbols
 **Author**: *Billy Price*
 
-{% katexmm %}
+
 
 This is a small glossary of symbol-commands for $\mathrm{\LaTeX}$, specifically the math-environment, which can be used in Microsoft's equation editor in OneNote and Word.
 
@@ -62,4 +63,3 @@ The backslash is necessary in front of each curly-brace, since by themselves the
 * $$(X \cup Y) \setminus \{P, \neg P\}$$ - `(X \cup Y) \setminus \{P, \neg P\}`
 * $\varphi_1, \varphi_2, \varphi_3 \vDash \psi$ - `\varphi_1, \varphi_2, \varphi_3 \vDash \psi`
 
-{% endkatexmm %}
