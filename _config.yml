@@ -1,7 +1,6 @@
 title: Billy Snikkers # The title of the blog
 author: Billy Snikkers # Your name 
 url: https://billysnikkers.net # this is your site's root address.
-baseurl: "/"
 description: > # this means to ignore newlines until "show_excerpts:"
   My personal webpage.
 favicon: "./favicon.ico" # set the favicon of the site 
