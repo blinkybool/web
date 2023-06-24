@@ -8,9 +8,8 @@ Master's student in mathematics at Utrecht University (Logic Track), and chief s
 - [metaboard](https://github.com/metauni/metaboard): Shared virtual blackboards in Roblox. I am the primary author and maintainer. These are the key instrument for delivering seminars in Roblox. Embedding information in a persistent, virtual space with metaboards is a powerful framework for collaboration and research, not possible with other shared whiteboards tools.
 ![](metaboard-festival.png)
 - [metauniOS](https://github.com/metauni/metaboard): monorepo for the modules that make up metauni. I designed the overall structure and module loading, and have made major contributions to the Orbcam, AdminCommands and Drone systems.
-<!-- ![](./orbcam720.mp4) -->
 <center>
-<video src="orbcam720-1.mp4" controls muted title="Orbcam" width="640" height="360"></video>
+<video src="orbcam720.mp4" controls muted title="Orbcam" width="640" height="360"></video>
 </center>
 - [Feather](https://github.com/blinkybool/feather): A featherweight declarative instance manager for Roblox. Made to dramatically increase the memory efficiency of metaboard.
 <center>
