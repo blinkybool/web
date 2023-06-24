@@ -102,7 +102,7 @@ This leads to an expectation of work required to maintain the set when adding, r
 
 <p>we’re actually just saying $P(y)$.</p>
 
-<p>Given an anonymous set, $A$, you might imagine $A$ to secretly have the form ${x \mid P(x)}$ for some predicate $P(x)$. Of course $P(x)$ must always agree with $x \in A$, so we can bring this full circle by saying:</p>
+<p>Given an anonymous set, $A$, you might imagine $A$ to secretly have the form $\{x \mid P(x)\}$ for some predicate $P(x)$. Of course $P(x)$ must always agree with $x \in A$, so we can bring this full circle by saying:</p>
 
 \[A = \{x \mid x \in A\}\]
 
@@ -114,7 +114,7 @@ This leads to an expectation of work required to maintain the set when adding, r
 
 <p>which may or may not be true at some interpretation, $\mathcal{I}$.</p>
 
-<p>By extension, given sets $A$ and $B$, we define $A = B$ to mean \(\forall x~ (x \in A \Leftrightarrow x \in B)\) You can see that this reduces to the original statement when $A$ is ${ x \mid P(x)}$ and $B$ is ${y \mid Q(y)}$.</p>
+<p>By extension, given sets $A$ and $B$, we define $A = B$ to mean \(\forall x~ (x \in A \Leftrightarrow x \in B)\) You can see that this reduces to the original statement when $A$ is $\{ x \mid P(x)\}$ and $B$ is $\{y \mid Q(y)\}$.</p>
 
 <p>Now what would it mean if we weakened the use of biimplication, $\Leftrightarrow$, to implication, $\Rightarrow$?</p>
 
@@ -139,17 +139,17 @@ This leads to an expectation of work required to maintain the set when adding, r
 
 <h3 id="singleton-sets">Singleton sets</h3>
 
-<p>Given an object $a$, we can define the set just containing $a$, written ${a}$, like this:</p>
+<p>Given an object $a$, we can define the set just containing $a$, written $\{a\}$, like this:</p>
 
 \[\{x \mid x = a\}\]
 
 <h3 id="finite-sets">Finite sets</h3>
 
-<p>Given some objects, say $a,b,c,d$, we can describe a set which contains those elements, and nothing else. ${a,b,c,d}$ But is this the same as ${a,a,d,c,b}$? How would we demonstrate this? The problem is we haven’t defined what ${a,b,c,d}$ <em>is</em> - what is the underlying predicate? Here’s a simple way to define it:</p>
+<p>Given some objects, say $a,b,c,d$, we can describe a set which contains those elements, and nothing else. $\{a,b,c,d\}$ But is this the same as $\{a,a,d,c,b\}$? How would we demonstrate this? The problem is we haven’t defined what $\{a,b,c,d\}$ <em>is</em> - what is the underlying predicate? Here’s a simple way to define it:</p>
 
 \[\{a,b,c,d\} := \{x \mid x = a \vee x = b \vee x = c \vee x = d\}\]
 
-<p>Now it’s clear that we could demonstrate ${a,b,c,d} = {a,a,d,c,b}$, since this is just proving that</p>
+<p>Now it’s clear that we could demonstrate $\{a,b,c,d\} = \{a,a,d,c,b\}$, since this is just proving that</p>
 
 \[(x = a \vee x = b \vee x = c \vee x = d) \equiv (x = a \vee x = a \vee x = d \vee x = c \vee x = b)\]
 
@@ -182,7 +182,7 @@ $$\Sigma^* := \bigcup_{n\in \mathbb{N}} \left\{a_1 a_2 \dots a_n \mid \forall i~
 
 <h2 id="the-important-difference-between-sets-and-unary-predicates">The important difference between sets and unary predicates</h2>
 
-<p>Hopefully by now you are convinced that a set “is just a predicate”. However I want to make a careful distinction now. A set is a set, and only becomes a logical statement via the $\in$ symbol. Likewise, a unary predicate, or any logical statement $\varphi(x)$, is not a set, and only becomes a set once we <em>lift</em> it to a set by writing ${x \mid \varphi(x)}$.</p>
+<p>Hopefully by now you are convinced that a set “is just a predicate”. However I want to make a careful distinction now. A set is a set, and only becomes a logical statement via the $\in$ symbol. Likewise, a unary predicate, or any logical statement $\varphi(x)$, is not a set, and only becomes a set once we <em>lift</em> it to a set by writing $\{x \mid \varphi(x)\}$.</p>
 
 <p>Essentially, a set is a <em>wrapper</em> for a predicate, and that predicate is accessed via the $\in$ symbol.</p>
 
@@ -201,11 +201,11 @@ $$\Sigma^* := \bigcup_{n\in \mathbb{N}} \left\{a_1 a_2 \dots a_n \mid \forall i~
 \[\begin{aligned}(x \in A \cap B) &amp;\Leftrightarrow (x \in B \wedge x \in A) \\
 (A \cap B) &amp;= \{x \mid x \in B \wedge x \in A\} \end{aligned}\]
 
-<p>For similar reasons, the reading of $x \in A \cap B$ should be unambiguously $x \in (A \cap B)$, and not $(x \in A) \cap B$, because we can only intersect <em>sets</em>, not logical statements like $x \in A$. Of course we can <em>lift</em> any logical statement to a set, but that would be written ${x \mid x \in A} \cap B$, which is just $A \cap B$, and likely not what we mean when we write $x \in A \cap B$.</p>
+<p>For similar reasons, the reading of $x \in A \cap B$ should be unambiguously $x \in (A \cap B)$, and not $(x \in A) \cap B$, because we can only intersect <em>sets</em>, not logical statements like $x \in A$. Of course we can <em>lift</em> any logical statement to a set, but that would be written $\{x \mid x \in A\} \cap B$, which is just $A \cap B$, and likely not what we mean when we write $x \in A \cap B$.</p>
 
 <hr />
 
-<p>In the following table, notice how $\subseteq$ and $=$ turn two sets in a logical statement, while $\cup, \cap, \setminus, \oplus, \times$ turn two sets into a new set. Also notice that anything written in the <strong>Set Construction</strong> column can be written as ${x \mid \varphi}$, where $\varphi$ is the corresponding formula in the <strong>Equivalent Statement</strong> column with $x$ free. The last row (set product) is an exception - we would write ${(x,y) \mid x \in A \wedge y \in B }$.</p>
+<p>In the following table, notice how $\subseteq$ and $=$ turn two sets in a logical statement, while $\cup, \cap, \setminus, \oplus, \times$ turn two sets into a new set. Also notice that anything written in the <strong>Set Construction</strong> column can be written as $\{x \mid \varphi\}$, where $\varphi$ is the corresponding formula in the <strong>Equivalent Statement</strong> column with $x$ free. The last row (set product) is an exception - we would write $\{(x,y) \mid x \in A \wedge y \in B \}$.</p>
 
 <table>
   <thead>

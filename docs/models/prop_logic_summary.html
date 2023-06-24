@@ -399,17 +399,17 @@ $ \{\{P, \neg Q, S\}, \{P, \neg R, S\}, \{\neg S, \neg P\}, \{\neg S, Q, R\}\}$
 </center>
 
 <h3 id="resolving-clauses">Resolving Clauses</h3>
-<p>If we can find a propositional letter $A$ and two clauses, $X, Y$ with $P \in X$ and $\neg P \in Y$ (like ${P,A,B}$ and ${\neg P, C, D, E}$) we can conclude the clause $(X \cup Y) \setminus {P,\neg P}$, that is, all the literals in either X or Y that aren’t $P$ or $\neg P$, as a <strong>logical consequence</strong>. For example, the clauses ${P,A,B}$ and ${\neg P, C, D, E}$ <em>resolve</em> to ${A,B,C,D,E}$. Paying attention to the precise definition of logical consequence, pick two small clauses that can be resolved, and convince yourself that the resolvent is a logical consequence of those two clauses together. Importantly, the resolvent is <em>not</em> equivalent to the previous two, it’s just a logical consequence.</p>
+<p>If we can find a propositional letter $A$ and two clauses, $X, Y$ with $P \in X$ and $\neg P \in Y$ (like $\{P,A,B\}$ and $\{\neg P, C, D, E\}$) we can conclude the clause $(X \cup Y) \setminus {P,\neg P}$, that is, all the literals in either X or Y that aren’t $P$ or $\neg P$, as a <strong>logical consequence</strong>. For example, the clauses $\{P,A,B\}$ and $\{\neg P, C, D, E\}$ <em>resolve</em> to $\{A,B,C,D,E\}$. Paying attention to the precise definition of logical consequence, pick two small clauses that can be resolved, and convince yourself that the resolvent is a logical consequence of those two clauses together. Importantly, the resolvent is <em>not</em> equivalent to the previous two, it’s just a logical consequence.</p>
 
 <p><img src="/models/resolvent.jpeg" alt="resolvent" /></p>
 
-<p>In the above image, we make use of the principle written in red, which says that if we can ever derive a contradiction (an unsatisfiable clause), we can conclude the unsatisfiability of the original clauses. We consider the empty clause, written $\emptyset$, unsatisfiable, because the only way to derive it is to <em>resolve</em> a pair of clauses of the form ${P}$ and ${\neg P}$, which together represent $P \wedge \neg P$ (clearly unsatisfiable).</p>
+<p>In the above image, we make use of the principle written in red, which says that if we can ever derive a contradiction (an unsatisfiable clause), we can conclude the unsatisfiability of the original clauses. We consider the empty clause, written $\emptyset$, unsatisfiable, because the only way to derive it is to <em>resolve</em> a pair of clauses of the form $\{P\}$ and $\{\neg P\}$, which together represent $P \wedge \neg P$ (clearly unsatisfiable).</p>
 
 <h3 id="a-common-misconception">A common misconception</h3>
 
-<p>What do the clauses ${A,B}$ and ${\neg A, \neg B}$ resolve to? Is it $\emptyset$? No! That would mean that $(A \vee B) \wedge (\neg A \vee \neg B)$ is unsatisfiable, but it isn’t! Consider the model where $A$ is true and $B$ is false - this makes the formula true.</p>
+<p>What do the clauses $\{A,B\}$ and $\{\neg A, \neg B\}$ resolve to? Is it $\emptyset$? No! That would mean that $(A \vee B) \wedge (\neg A \vee \neg B)$ is unsatisfiable, but it isn’t! Consider the model where $A$ is true and $B$ is false - this makes the formula true.</p>
 
-<p>These clauses actually resolve to either ${B,\neg B}$ or to ${A,\neg A}$, since we can only resolve on one letter at a time. Both true of these formulas are always in any model - so are equivalent to $\textbf{t}$ (true). But having “true” as a logical consequence tells you nothing! All formulas have “true” as a logical consequence. Given only these clauses, we are at a dead end - there is no contradiction among them.</p>
+<p>These clauses actually resolve to either $\{B,\neg B\}$ or to $\{A,\neg A\}$, since we can only resolve on one letter at a time. Both true of these formulas are always in any model - so are equivalent to $\textbf{t}$ (true). But having “true” as a logical consequence tells you nothing! All formulas have “true” as a logical consequence. Given only these clauses, we are at a dead end - there is no contradiction among them.</p>
 
 <h2 id="usage-of-resolution">Usage of Resolution</h2>
 
