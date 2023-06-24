@@ -18,7 +18,7 @@ Master's student in mathematics at Utrecht University (Logic Track), and chief s
 </center>
 - [Replay](https://www.youtube.com/watch?v=s4dfwxzXEFM): Multi-channel recordings of speaker audio, writing on metaboards, and motion capture of a VR character. WIP, but some code can be found [here](https://github.com/metauni/ReplayUtils)
 <center>
-<iframe width="630" height="472" frameBorder="0"
+<iframe width="630" height="472" frameBorder="0" allow="fullscreen"
 src="https://www.youtube.com/embed/s4dfwxzXEFM">
 </iframe>
 </center>
