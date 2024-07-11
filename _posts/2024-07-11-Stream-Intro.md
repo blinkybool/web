@@ -10,7 +10,7 @@ updated: 2024-07-11
   .gist-file
   .gist-data {max-height: 300px;max-width: 1000px;}
 </style>
-<script src="https://gist.github.com/blinkybool/1390d53a730493e2ce72549c5bf7eaec.js"></script>
+<script src="https://gist.github.com/blinkybool/1390d53a730493e2ce72549c5bf7eaec.js?file=Stream.luau"></script>
 
 This is (part 1 of) a conceptual intro to `Stream.luau`, a (very new) library I wrote for managing the complexity of event-driven programming in Roblox (with types!).
 It is directly inspired by [Rx (Nevermore)](https://quenty.github.io/NevermoreEngine/api/Rx/), which itself is a port of [RxJS](https://rxjs.dev/) to lua (also see the [standalone version by Anaminus](https://gist.github.com/Anaminus/1f31af4e5280b9333f3f58e13840c670)). See the "IAQ" (immediately anticipated questions) section at the end for comparisons to observables and Rx. For now we will not assume prior familiarity with observables.
