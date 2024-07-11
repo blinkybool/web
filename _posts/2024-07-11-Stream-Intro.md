@@ -351,7 +351,7 @@ Just copy it: [Stream.luau](https://gist.github.com/blinkybool/1390d53a730493e2c
 
 In short: streams+listeners are a simplified version of observables+subscribers, where `stream(listener)` corresponds to `observable:Subscribe(onFire)`. The `:Subscribe(onFire, onFail, onComplete)` method constructs a `Subscriber` object using the provided functions, while for listeners,there's no object, it's just an `onFire` function.
 
-This library is a (typed) distillation of the core concepts in [Rx](https://quenty.github.io/NevermoreEngine/api/Rx/), [Brio](https://quenty.github.io/NevermoreEngine/api/Brio/) and [Blend](https://quenty.github.io/NevermoreEngine/api/Blend/) that I personally have found useful for programming in Roblox, which are: handling dynamic events, binding creation+cleanup or behaviour to lifetimes, declarative instance creation, and reactive state management.
+This library is a (typed) distillation of the core concepts in [Rx](https://quenty.github.io/NevermoreEngine/api/Rx/), [Brio](https://quenty.github.io/NevermoreEngine/api/Brio/) and [Blend](https://quenty.github.io/NevermoreEngine/api/Blend/) that I personally have found useful for programming in Roblox, which are: connecting to dynamically defined events, binding creation+cleanup or behaviour to lifetimes, declarative instance creation, and reactive state management.
 
 I concluded that I could achieve all of this without subscribers having an `onFail` and `onComplete`, which, in Rx, spend most of their time being passed around, while `onFire` is where all the interesting stuff happens. Using `onFail` and `onComplete` makes observables more comparable to promises, which you may find beneficial.
 
