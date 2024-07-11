@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Intro to Stream: control-flow and data-flow in Luau"
+title: "Intro to streams: control-flow and data-flow in Luau"
 updated: 2024-07-11
 ---
 
