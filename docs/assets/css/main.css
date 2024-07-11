@@ -46,12 +46,12 @@ pre, code { font-size: 16.2px; border: 1px solid #e0e0e0; border-radius: 3px; ba
 
 code { padding: 1px 1px; }
 
-pre { padding: 2px 2px; overflow-x: auto; }
+pre { padding: 2px 2px; overflow-x: auto; tab-size: 2; }
 pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 /** Wrapper */
-.wrapper { max-width: -webkit-calc(800px - (30px)); max-width: calc(800px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
-@media screen and (min-width: 800px) { .wrapper { max-width: -webkit-calc(800px - (30px * 2)); max-width: calc(800px - (30px * 2)); padding-right: 30px; padding-left: 30px; } }
+.wrapper { max-width: -webkit-calc(950px - (30px)); max-width: calc(950px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
+@media screen and (min-width: 800px) { .wrapper { max-width: -webkit-calc(950px - (30px * 2)); max-width: calc(950px - (30px * 2)); padding-right: 30px; padding-left: 30px; } }
 
 /** Clearfix */
 .wrapper:after { content: ""; display: table; clear: both; }

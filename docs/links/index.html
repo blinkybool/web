@@ -21,12 +21,18 @@
 <link rel="stylesheet" href="/assets/css/main.css" />
   <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?" />
   <link rel="stylesheet" href="/assets/css/agate.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-  
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://unpkg.com/highlightjs-luau/dist/luau.min.js"></script>
   <script>
-    hljs.initHighlightingOnLoad();
-  </script><link type="application/atom+xml" rel="alternate" href="https://billysnikkers.net/feed.xml" title="Billy Snikkers" /></head><body>
+    hljs.highlightAll();
+  </script>
+  
+<!-- 
+  <script>
+    hljs.registerLanguage('luau', window.hljsDefineLuau);
+    hljs.highlightAll();
+  </script> --><link type="application/atom+xml" rel="alternate" href="https://billysnikkers.net/feed.xml" title="Billy Snikkers" /></head><body>
 
         <nav class="site-nav">
       <input type="checkbox" id="nav-trigger" class="nav-trigger" />
