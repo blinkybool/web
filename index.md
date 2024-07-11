@@ -2,8 +2,6 @@
 layout: home
 ---
 
-Master's student in mathematics at Utrecht University (Logic Track), and chief software engineer/co-founder of [metauni](https://metauni.org/). I'm interested in productive high-level abstractions that allow you to keep your feet on the ground, both in programming and proofs.
-
 ## Projects
 - [metaboard](https://github.com/metauni/metaboard): Shared virtual blackboards in Roblox. I am the primary author and maintainer. These are the key instrument for delivering seminars in Roblox. Embedding information in a persistent, virtual space with metaboards is a powerful framework for collaboration and research, not possible with other shared whiteboards tools.
 ![](metaboard-festival.png)

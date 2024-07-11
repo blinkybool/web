@@ -16,12 +16,11 @@ layout: default
     <!-- <p class="home-sub-heading">{{- site.description | escape -}}</p> -->
   </div>
 
-  <div>
-    {{content}}
-  </div>
+  Master's student in mathematics at Utrecht University (Logic Track), and chief software engineer/co-founder of <a href="https://metauni.org/">metauni</a>. I'm interested in productive high-level abstractions that allow you to keep your feet on the ground, both in programming and proofs.
 
-  <!-- {%- if site.posts.size > 0 -%}
+  {%- if site.posts.size > 0 -%}
   <ul class="post-list">
+    <!-- <h2 class="post-year">Recent Posts</h2> -->
       {% for post in site.posts  %}
       {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
       {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
@@ -52,5 +51,9 @@ layout: default
       {% endif %}
   {% endfor %}
   </ul>
-  {%- endif -%} -->
+  {%- endif -%}
+
+  <div>
+    {{content}}
+  </div>
 </div>
