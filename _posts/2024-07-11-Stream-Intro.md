@@ -53,7 +53,7 @@ clean(cleanup)
 
 Streams are about control-flow and data-flow. By listening to a stream, i.e. giving it a callback/behaviour, you yield control to the stream to decide when and with-what-data that behaviour is executed. In this sense, they can be thought of as a common generalisation of for-loops and events, which both provide data from some source, and execute a behaviour synchronously (for-loops) or asynchronously (events).
 
-But do not be mistaken, they are strictly more-powerful than either concept!
+But do not be mistaken, they are strictly more powerful than either concept!
 
 The reason is that setting up control-flow (connecting to events/streams), while managing the timely clean up all associated connections, can explode in complexity. You will do one of the following:
 1. Grit your teeth and pollute your code with layers of housekeeping logic
