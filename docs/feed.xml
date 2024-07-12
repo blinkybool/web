@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://billysnikkers.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billysnikkers.net/" rel="alternate" type="text/html" /><updated>2024-07-11T21:02:36+02:00</updated><id>https://billysnikkers.net/feed.xml</id><title type="html">Billy Snikkers</title><subtitle>My personal webpage.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://billysnikkers.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://billysnikkers.net/" rel="alternate" type="text/html" /><updated>2024-07-12T15:09:41+02:00</updated><id>https://billysnikkers.net/feed.xml</id><title type="html">Billy Snikkers</title><subtitle>My personal webpage.
 </subtitle><author><name>Billy Snikkers</name></author><entry><title type="html">Intro to streams: control-flow and data-flow in Luau</title><link href="https://billysnikkers.net/2024/07/11/Stream-Intro.html" rel="alternate" type="text/html" title="Intro to streams: control-flow and data-flow in Luau" /><published>2024-07-11T00:00:00+02:00</published><updated>2024-07-11T00:00:00+02:00</updated><id>https://billysnikkers.net/2024/07/11/Stream-Intro</id><content type="html" xml:base="https://billysnikkers.net/2024/07/11/Stream-Intro.html">&lt;p&gt;&lt;a href=&quot;https://gist.github.com/blinkybool/1390d53a730493e2ce72549c5bf7eaec&quot;&gt;Stream.luau&lt;/a&gt;&lt;/p&gt;
 &lt;style type=&quot;text/css&quot;&gt;
   /* .gist {width:500px !important;} */
@@ -47,7 +47,7 @@ Here is a toy-example to illustrate (we use the terminology “emits &lt;code cl
 
 &lt;p&gt;Streams are about control-flow and data-flow. By listening to a stream, i.e. giving it a callback/behaviour, you yield control to the stream to decide when and with-what-data that behaviour is executed. In this sense, they can be thought of as a common generalisation of for-loops and events, which both provide data from some source, and execute a behaviour synchronously (for-loops) or asynchronously (events).&lt;/p&gt;
 
-&lt;p&gt;But do not be mistaken, they are strictly more-powerful than either concept!&lt;/p&gt;
+&lt;p&gt;But do not be mistaken, they are strictly more powerful than either concept!&lt;/p&gt;
 
 &lt;p&gt;The reason is that setting up control-flow (connecting to events/streams), while managing the timely clean up all associated connections, can explode in complexity. You will do one of the following:&lt;/p&gt;
 &lt;ol&gt;
