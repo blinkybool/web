@@ -134,7 +134,7 @@ Here is a toy-example to illustrate (we use the terminology “emits <code class
 
 <p>But do not be mistaken, they are strictly more powerful than either concept!</p>
 
-<p>The reason is that setting up control-flow (connecting to events/streams), while managing the timely clean up all associated connections, can explode in complexity. You will do one of the following:</p>
+<p>The reason is that setting up control-flow (connecting to events/streams), while managing the timely clean up of all connections, can explode in complexity. You will do one of the following:</p>
 <ol>
   <li>Grit your teeth and pollute your code with layers of housekeeping logic</li>
   <li>Half-grit your teeth and implement the correct control flow, but with memory leaks (not disconnecting connections)</li>
@@ -239,6 +239,8 @@ Problems:</p>
 			<span class="n">characterConnection</span> <span class="o">=</span> <span class="kc">nil</span>
 		<span class="k">end</span>
 	<span class="k">end</span>
+
+	<span class="k">return</span> <span class="n">cleanup</span>
 <span class="k">end</span>
 
 <span class="kd">local</span> <span class="n">cleanup</span> <span class="o">=</span> <span class="n">onDamageAttribute</span><span class="p">(</span><span class="n">updateDamageGui</span><span class="p">)</span>
@@ -291,9 +293,9 @@ intended behaviour.</p>
 
 <span class="c1">-- (this logic is just what switchAll does)</span>
 <span class="c1">-- Note that `cleanupInner`, `cleanupStream` will be what we previously called `attributeConnection` and `characterConnection`</span>
-<span class="kd">local</span> <span class="n">damageStream</span><span class="p">:</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">number</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">listener</span><span class="p">:</span> <span class="p">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">number</span><span class="err">?</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span>
+<span class="kd">local</span> <span class="n">damageStream</span><span class="p">:</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">number</span><span class="err">?</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">function</span><span class="p">(</span><span class="n">listener</span><span class="p">:</span> <span class="p">(</span><span class="n">number</span><span class="err">?</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">())</span>
 	<span class="kd">local</span> <span class="n">cleanupInner</span> <span class="o">=</span> <span class="kc">nil</span>
-	<span class="kd">local</span> <span class="n">cleanupStream</span> <span class="o">=</span> <span class="n">damageStreamStream</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">innerStream</span><span class="p">:</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">):</span> <span class="p">()</span>
+	<span class="kd">local</span> <span class="n">cleanupStream</span> <span class="o">=</span> <span class="n">damageStreamStream</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">innerStream</span><span class="p">:</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">number</span><span class="err">?</span><span class="o">&gt;</span><span class="p">):</span> <span class="p">()</span>
 		<span class="n">clean</span><span class="p">(</span><span class="n">cleanupInner</span><span class="p">)</span>
 		<span class="n">cleanupInner</span> <span class="o">=</span> <span class="kc">nil</span>
 		<span class="n">cleanupInner</span> <span class="o">=</span> <span class="n">innerStream</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
@@ -310,14 +312,9 @@ intended behaviour.</p>
 <span class="c1">-- call `clean(cleanup)`</span>
 </code></pre></div></div>
 
-<p>Now we have some simple components here that we can extract into reusable library functions,
-such as <code class="language-plaintext highlighter-rouge">attributeOf</code> and <code class="language-plaintext highlighter-rouge">propertyOf</code> (a generalisation of <code class="language-plaintext highlighter-rouge">characterStream</code>).
-However what is the best way to decompose/understand the creation of <code class="language-plaintext highlighter-rouge">damageStream</code>
-from <code class="language-plaintext highlighter-rouge">characterStream</code> via <code class="language-plaintext highlighter-rouge">damageStreamStream</code>?</p>
+<p>Now we have some simple components here that we can extract into reusable library functions, such as <code class="language-plaintext highlighter-rouge">attributeOf</code> and <code class="language-plaintext highlighter-rouge">propertyOf</code> (a generalisation of <code class="language-plaintext highlighter-rouge">characterStream</code>). What is the best way to decompose/understand the creation of <code class="language-plaintext highlighter-rouge">damageStream</code> from <code class="language-plaintext highlighter-rouge">characterStream</code> via <code class="language-plaintext highlighter-rouge">damageStreamStream</code>?</p>
 
-<p>The answer is <code class="language-plaintext highlighter-rouge">switchMap(fn)(characterStream)</code>, where <code class="language-plaintext highlighter-rouge">fn</code> maps characters to damage streams.
-Internally, <code class="language-plaintext highlighter-rouge">switchMap</code> maps the emitted characters to damage streams, and uses <code class="language-plaintext highlighter-rouge">switchAll</code>
-to emit from the latest damage stream.</p>
+<p>The answer is <code class="language-plaintext highlighter-rouge">switchMap(fn)(characterStream)</code>, where <code class="language-plaintext highlighter-rouge">fn</code> maps characters to damage streams (or <code class="language-plaintext highlighter-rouge">nilOnce</code>). Internally, <code class="language-plaintext highlighter-rouge">switchMap</code> maps the emitted characters to damage streams, and uses <code class="language-plaintext highlighter-rouge">switchAll</code> to emit from the latest damage stream.</p>
 
 <div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="k">function</span> <span class="nf">switchAll</span><span class="o">&lt;</span><span class="n">T</span><span class="o">...&gt;</span><span class="p">(</span><span class="n">stream</span><span class="p">:</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">...&gt;&gt;</span><span class="p">):</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">...&gt;</span>
 	<span class="k">return</span> <span class="k">function</span><span class="p">(</span><span class="n">listener</span><span class="p">:</span> <span class="p">(</span><span class="n">T</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()):</span> <span class="n">CleanupTask</span>
@@ -437,7 +434,7 @@ Next time we’ll talk about managing lifetimes with <code class="language-plain
   <p>What’s the difference between streams and observables, and why did you write this if we already have Rx?</p>
 </blockquote>
 
-<p>In short: streams+listeners are a simplified version of observables+subscribers, where <code class="language-plaintext highlighter-rouge">stream(listener)</code> corresponds to <code class="language-plaintext highlighter-rouge">observable:Subscribe(onFire)</code>. The <code class="language-plaintext highlighter-rouge">:Subscribe(onFire, onFail, onComplete)</code> method constructs a <code class="language-plaintext highlighter-rouge">Subscriber</code> object using the provided functions, while for listeners,there’s no object, it’s just an <code class="language-plaintext highlighter-rouge">onFire</code> function.</p>
+<p>In short: streams+listeners are a simplified version of observables+subscribers, where <code class="language-plaintext highlighter-rouge">stream(listener)</code> corresponds to <code class="language-plaintext highlighter-rouge">observable:Subscribe(onFire)</code>. The <code class="language-plaintext highlighter-rouge">:Subscribe(onFire, onFail, onComplete)</code> method constructs a <code class="language-plaintext highlighter-rouge">Subscriber</code> object using the provided functions, and passes it internally to <code class="language-plaintext highlighter-rouge">observable._onSuscribe(sub)</code>. So a stream is just an <code class="language-plaintext highlighter-rouge">_onSubscribe</code> function, and a listener is just an <code class="language-plaintext highlighter-rouge">onFire</code> function.</p>
 
 <p>This library is a (typed) distillation of the core concepts in <a href="https://quenty.github.io/NevermoreEngine/api/Rx/">Rx</a>, <a href="https://quenty.github.io/NevermoreEngine/api/Brio/">Brio</a> and <a href="https://quenty.github.io/NevermoreEngine/api/Blend/">Blend</a> that I personally have found useful for programming in Roblox, which are: connecting to dynamically defined events, binding creation+cleanup or behaviour to lifetimes, declarative instance creation, and reactive state management.</p>
 
