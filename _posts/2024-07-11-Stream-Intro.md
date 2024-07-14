@@ -55,7 +55,7 @@ Streams are about control-flow and data-flow. By listening to a stream, i.e. giv
 
 But do not be mistaken, they are strictly more powerful than either concept!
 
-The reason is that setting up control-flow (connecting to events/streams), while managing the timely clean up all associated connections, can explode in complexity. You will do one of the following:
+The reason is that setting up control-flow (connecting to events/streams), while managing the timely clean up of all connections, can explode in complexity. You will do one of the following:
 1. Grit your teeth and pollute your code with layers of housekeeping logic
 2. Half-grit your teeth and implement the correct control flow, but with memory leaks (not disconnecting connections)
 3. Fail to implement the control flow correctly (slack-jawed?)
@@ -158,6 +158,8 @@ local function onDamageAttribute(callback: (number?) -> ()): CleanupTask
 			characterConnection = nil
 		end
 	end
+
+	return cleanup
 end
 
 local cleanup = onDamageAttribute(updateDamageGui)
@@ -211,9 +213,9 @@ end
 
 -- (this logic is just what switchAll does)
 -- Note that `cleanupInner`, `cleanupStream` will be what we previously called `attributeConnection` and `characterConnection`
-local damageStream: Stream<number> = function(listener: (Stream<number?>) -> ())
+local damageStream: Stream<number?> = function(listener: (number?) -> ())
 	local cleanupInner = nil
-	local cleanupStream = damageStreamStream(function(innerStream: Stream<T>): ()
+	local cleanupStream = damageStreamStream(function(innerStream: Stream<number?>): ()
 		clean(cleanupInner)
 		cleanupInner = nil
 		cleanupInner = innerStream(listener)
@@ -230,14 +232,9 @@ local cleanup = damageStream(updateDamageGui)
 -- call `clean(cleanup)`
 ```
 
-Now we have some simple components here that we can extract into reusable library functions,
-such as `attributeOf` and `propertyOf` (a generalisation of `characterStream`).
-However what is the best way to decompose/understand the creation of `damageStream`
-from `characterStream` via `damageStreamStream`?
+Now we have some simple components here that we can extract into reusable library functions, such as `attributeOf` and `propertyOf` (a generalisation of `characterStream`). What is the best way to decompose/understand the creation of `damageStream` from `characterStream` via `damageStreamStream`?
 
-The answer is `switchMap(fn)(characterStream)`, where `fn` maps characters to damage streams.
-Internally, `switchMap` maps the emitted characters to damage streams, and uses `switchAll`
-to emit from the latest damage stream.
+The answer is `switchMap(fn)(characterStream)`, where `fn` maps characters to damage streams (or `nilOnce`). Internally, `switchMap` maps the emitted characters to damage streams, and uses `switchAll` to emit from the latest damage stream.
 
 ```lua
 local function switchAll<T...>(stream: Stream<Stream<T...>>): Stream<T...>
@@ -349,7 +346,7 @@ Just copy it: [Stream.luau](https://gist.github.com/blinkybool/1390d53a730493e2c
 
 > What's the difference between streams and observables, and why did you write this if we already have Rx?
 
-In short: streams+listeners are a simplified version of observables+subscribers, where `stream(listener)` corresponds to `observable:Subscribe(onFire)`. The `:Subscribe(onFire, onFail, onComplete)` method constructs a `Subscriber` object using the provided functions, while for listeners,there's no object, it's just an `onFire` function.
+In short: streams+listeners are a simplified version of observables+subscribers, where `stream(listener)` corresponds to `observable:Subscribe(onFire)`. The `:Subscribe(onFire, onFail, onComplete)` method constructs a `Subscriber` object using the provided functions, and passes it internally to `observable._onSuscribe(sub)`. So a stream is just an `_onSubscribe` function, and a listener is just an `onFire` function.
 
 This library is a (typed) distillation of the core concepts in [Rx](https://quenty.github.io/NevermoreEngine/api/Rx/), [Brio](https://quenty.github.io/NevermoreEngine/api/Brio/) and [Blend](https://quenty.github.io/NevermoreEngine/api/Blend/) that I personally have found useful for programming in Roblox, which are: connecting to dynamically defined events, binding creation+cleanup or behaviour to lifetimes, declarative instance creation, and reactive state management.
 
