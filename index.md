@@ -3,6 +3,7 @@ layout: home
 ---
 
 ## Projects
+- [Longest Path](https://github.com/blinkybool/LongestPath): Benchmarking longest path algorithms, including QUBO/Ising model formulations and a super-fast branch-n-bound search written in C.
 - [metaboard](https://github.com/metauni/metaboard): Shared virtual blackboards in Roblox. I am the primary author and maintainer. These are the key instrument for delivering seminars in Roblox. Embedding information in a persistent, virtual space with metaboards is a powerful framework for collaboration and research, not possible with other shared whiteboards tools.
 ![](metaboard-festival.png)
 - [metauniOS](https://github.com/metauni/metaboard): monorepo for the modules that make up metauni. I designed the overall structure and module loading, and have made major contributions to the Orbcam, AdminCommands and Drone systems.
@@ -28,6 +29,8 @@ I organise and host the [Foundations seminar](https://metauni.org/posts/events/s
 
 ## Research
 
+* [The Yoneda Lemma](./assets/OMR_Yoneda_Lemma.pdf)
+  * A group research project on examples and applications of the Yoneda lemma for [WISM102](https://osiris-student.uu.nl/onderwijscatalogus/extern/cursus?cursuscode=WISM102&taal=en&collegejaar=huidig)
 * *Verified Fairness in Machine Learning*
   * Supervised by [Toby Murray](https://people.eng.unimelb.edu.au/tobym/), [Ben Rubenstein](https://www.bipr.net), and [Olya Ohrimenko](https://people.eng.unimelb.edu.au/oohrimenko/)
 * *Formalising an Intuitionistic Type Theory in Lean.*
