@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+set -e
 bundle exec jekyll build --destination gh-pages/docs
 touch gh-pages/docs/.nojekyll
 cp CNAME gh-pages/docs
