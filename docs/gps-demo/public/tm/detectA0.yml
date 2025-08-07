@@ -1,0 +1,19 @@
+name: "DetectA(0)"
+alphabet: ["_", "A", "B"]
+states: ["r", "a"]
+initial_state: "r"
+t: 2
+
+inference_problem:
+  inputs: ["A", "B", "AB", "BA", "AA", "BB"]
+  outputs: ["a", "r", "a", "a", "a", "r"]
+  counts: "uniform"
+  description: "$y(x)$ characterises the language of strings containing an $\\texttt{A}$, i.e., $y(x) = \\texttt{a} \\Leftrightarrow  x \\text{ contains an } \\texttt{A}$"
+
+transitions:
+  - ["_", "r", "_", "r", "S"]
+  - ["_", "a", "_", "a", "S"]
+  - ["A", "r", "A", "a", "S"]
+  - ["A", "a", "A", "a", "S"]
+  - ["B", "r", "B", "r", "R"]
+  - ["B", "a", "B", "a", "S"]
